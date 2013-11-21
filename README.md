@@ -22,9 +22,13 @@ to see what's available:
       clean       	remove build artifacts
       help        	show help
 
-
 The first step is probably `make install` to install all needed deps followed by
 `make develop` to start working on app.
+
+You would also probaby like to remove git repository and start a new one:
+
+    % rm -r .git
+    % git init
 
 ## Application structure
 
