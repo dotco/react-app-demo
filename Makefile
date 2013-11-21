@@ -75,5 +75,5 @@ $(RA_BUNDLE)::
 $(RA_CSS_BUNDLE)::
 	@echo building $@
 	@mkdir -p $(@D)
-	@$(BIN)/xcss $(RA_CSS_TRANSFORM:%=-t %) $(RA_STYLES) > $@
+	@$(BIN)/xcss --compress $(RA_CSS_TRANSFORM:%=-t %) $(RA_STYLES) > $@
 
