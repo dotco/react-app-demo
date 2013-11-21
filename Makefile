@@ -2,11 +2,11 @@
 # Customization options
 ###
 
-RA_ENTRY 					= ./ui/index.jsx
-RA_STYLES 				= ./ui/index.css
-RA_ASSETS 				= ./ui/assets
-RA_TRANSFORM 			= reactify
-RA_CSS_TRANSFORM 	=
+RA_ENTRY         = ./ui/index.jsx
+RA_STYLES        = ./ui/index.css
+RA_ASSETS        = ./ui/assets
+RA_TRANSFORM     = reactify
+RA_CSS_TRANSFORM =
 
 ###
 # DO NOT EDIT
