@@ -54,7 +54,7 @@ help:
 	@echo 'Usage: make <action name>'
 	@echo ''
 	@echo 'Available actions:'
-	@echo '  install     	install all dependencies (default action)'
+	@echo '  install     	install all dependencies'
 	@echo '  develop     	start development server'
 	@echo '  build       	build all js and css bundles'
 	@echo '  build-report	report build artifacts size'
