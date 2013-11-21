@@ -9,6 +9,9 @@ credentials in `package.json`.
 This project has `Makefile` which assists you in common tasks, just type:
 
     % make help
+
+to see what's available:
+
     Usage: make <action name>
 
     Available actions:
@@ -19,7 +22,6 @@ This project has `Makefile` which assists you in common tasks, just type:
       clean       	remove build artifacts
       help        	show help
 
-to see what's available.
 
 The first step is probably `make install` to install all needed deps followed by
 `make develop` to start working on app.
