@@ -29,8 +29,10 @@ The first step is probably `make install` to install all needed deps followed by
 ## Application structure
 
     ├── Makefile          - project actions and build instructions
+    ├── LICENSE           - MIT License (change if you want to)
     ├── README.md         - this file
     ├── package.json      - npm package definition
+    ├── .gitignore        - git ignore
     └── ui                - your application
         ├── assets        - static assets are served from here
         ├── index.css     - entry point for CSS stylesheets
