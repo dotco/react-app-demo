@@ -2,6 +2,7 @@
 # Customization options
 ###
 
+RA_FLAGS				 = --debug --render
 RA_ENTRY         = ./ui/index.jsx
 RA_STYLES        = ./ui/index.css
 RA_ASSETS        = ./ui/assets
@@ -20,6 +21,7 @@ BIN = ./node_modules/.bin
 RA_BUNDLE = $(RA_ASSETS)/bundle.js
 RA_CSS_BUNDLE = $(RA_ASSETS)/bundle.css
 RA_OPTS = \
+	$(RA_FLAGS) \
 	$(RA_TRANSFORM:%=--transform %) \
 	$(RA_CSS_TRANSFORM:%=--css-transform %) \
 	$(RA_STYLES:%=--styles %) \
@@ -39,7 +41,7 @@ install link:
 	@npm $@
 
 develop:
-	@$(BIN)/react-app --debug --render $(RA_OPTS) $(RA_ENTRY)
+	@$(BIN)/react-app $(RA_OPTS) $(RA_ENTRY)
 
 build:: $(RA_BUNDLE) $(RA_CSS_BUNDLE)
 

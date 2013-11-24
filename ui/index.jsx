@@ -2,10 +2,16 @@ var React = require('react-tools/build/modules/React');
 var ReactApp = require('react-app');
 
 var Main = React.createClass({
+  fetchData: function(req, cb) {
+    // do XHR call here
+    console.log('fetching data...');
+    cb(null, {msg: 'Hello!'});
+  },
   render: function() {
+    var data = this.props.request.data;
     return (
       <div className="Main">
-        Hello!
+        <p>{data ? data.msg : 'Loading...'}</p>
         <a href="/about">About</a>
       </div>
     )
@@ -23,16 +29,24 @@ var About = React.createClass({
   }
 });
 
-var app = module.exports = ReactApp({
-  '/': Main,
-  '/about': About
-}, {
-  started: function() {
-    window.addEventListener('click', function(e) {
-      if (e.target.tagName === 'A' && e.target.attributes.href) {
-        e.preventDefault();
-        app.navigate(e.target.attributes.href.value);
-      }
-    });
+module.exports = ReactApp({
+  routes: {
+    '/': Main,
+    '/about': About
+  },
+
+  onClick: function(e) {
+    if (e.target.tagName === 'A' && e.target.attributes.href) {
+      e.preventDefault();
+      this.navigate(e.target.attributes.href.value);
+    }
+  },
+
+  componentDidMount: function() {
+    window.addEventListener('click', this.onClick);
+  },
+
+  componentWillUnmount: function() {
+    window.removeEventListener('click', this.onClick);
   }
-})
+});
