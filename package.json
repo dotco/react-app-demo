@@ -8,6 +8,7 @@
     "react-app": "git://github.com/andreypopp/react-app"
   },
   "devDependencies": {
+    "jsxhint": "~0.1.0",
     "reactify": "~0.4.0",
     "browserify": "~2.35.4",
     "xcss": "~0.14.1",

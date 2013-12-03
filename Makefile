@@ -21,6 +21,7 @@ RA_CSS_TRANSFORM =
 BIN = ./node_modules/.bin
 RA_BUNDLE = $(RA_ASSETS)/bundle.js
 RA_CSS_BUNDLE = $(RA_ASSETS)/bundle.css
+RA_ENTRY_DIR = $(shell dirname $(RA_ENTRY))
 RA_OPTS = \
 	$(RA_FLAGS) \
 	$(RA_TRANSFORM:%=--transform %) \
@@ -41,6 +42,9 @@ endef
 install link:
 	@npm $@
 
+lint:
+	@$(BIN)/jsxhint `find $(RA_ENTRY_DIR) -name '*.js' -or -name '*.jsx' -type f`
+
 develop:
 	@$(BIN)/react-app $(RA_OPTS) $(RA_ENTRY)
 
@@ -59,6 +63,7 @@ help:
 	@echo 'Available actions:'
 	@echo '  install     	install all dependencies'
 	@echo '  develop     	start development server'
+	@echo '  lint        	lint front-end code'
 	@echo '  build       	build all js and css bundles'
 	@echo '  build-report	report build artifacts size'
 	@echo '  clean       	remove build artifacts'
