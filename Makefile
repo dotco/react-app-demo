@@ -42,11 +42,14 @@ endef
 install link:
 	@npm $@
 
-lint:
-	@$(BIN)/jsxhint `find $(RA_ENTRY_DIR) -name '*.js' -or -name '*.jsx' -type f`
-
 develop:
 	@$(BIN)/react-app $(RA_OPTS) $(RA_ENTRY)
+
+test:
+	@$(BIN)/mocha specs/*.js
+
+lint:
+	@$(BIN)/jsxhint `find $(RA_ENTRY_DIR) -name '*.js' -or -name '*.jsx' -type f`
 
 build:: $(RA_BUNDLE) $(RA_CSS_BUNDLE)
 
@@ -64,6 +67,7 @@ help:
 	@echo '  install     	install all dependencies'
 	@echo '  develop     	start development server'
 	@echo '  lint        	lint front-end code'
+	@echo '  test        	run test suite'
 	@echo '  build       	build all js and css bundles'
 	@echo '  build-report	report build artifacts size'
 	@echo '  clean       	remove build artifacts'
