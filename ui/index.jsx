@@ -1,4 +1,4 @@
-var React = require('react-tools/build/modules/React');
+var React = require('react');
 var ReactApp = require('react-app');
 
 var Main = React.createClass({

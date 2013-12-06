@@ -4,7 +4,7 @@
   "description": "Demo for react-app",
   "main": "index.js",
   "dependencies": {
-    "react-tools": "~0.5.1",
+    "react": "http://petehunt.net/react/react-0.5.1.tar.gz",
     "react-app": "git://github.com/andreypopp/react-app"
   },
   "devDependencies": {
