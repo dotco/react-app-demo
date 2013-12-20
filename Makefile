@@ -81,8 +81,9 @@ help:
 $(RA_BUNDLE)::
 	@echo building $@
 	@mkdir -p $(@D)
-	@$(BIN)/browserify $(RA_TRANSFORM:%=-t %) -r $(RA_ENTRY):./app \
-		| $(BIN)/uglifyjs > $@
+	@NODE_ENV=production \
+		$(BIN)/browserify $(RA_TRANSFORM:%=-t %) -r $(RA_ENTRY):./app \
+		| $(BIN)/uglifyjs -c -m 2>/dev/null > $@
 
 $(RA_CSS_BUNDLE)::
 	@echo building $@
