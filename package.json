@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "jsxhint": "~0.3.0",
-    "reactify": "~0.4.0",
+    "reactify": "~0.5.0",
     "browserify": "~3.12.0",
     "xcss": "~0.14.2",
     "uglify-js": "~2.4.3",
