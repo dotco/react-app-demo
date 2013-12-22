@@ -15,8 +15,10 @@ to see what's available:
     Usage: make <action name>
 
     Available actions:
-      install     	install all dependencies (default action)
+      install     	install all dependencies
       develop     	start development server
+      lint        	lint front-end code
+      test        	run test suite
       build       	build all js and css bundles
       build-report	report build artifacts size
       clean       	remove build artifacts
