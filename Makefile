@@ -3,7 +3,7 @@
 ###
 
 # You can add --render to $(RA_FLAGS) to turn on server side UI pre-rendering
-RA_FLAGS         = --debug
+RA_FLAGS         = --debug --render
 RA_ENTRY         = ./ui/index.jsx
 RA_STYLES        = ./ui/index.css
 RA_ASSETS        = ./ui/assets
