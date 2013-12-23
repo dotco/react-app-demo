@@ -2,8 +2,12 @@
 # Customization options
 ###
 
-# You can add --render to $(RA_FLAGS) to turn on server side UI pre-rendering
-RA_FLAGS         = --debug --render
+# host and port to bind with for 'make develop' local server
+RA_DEVELOP_HOST  = localhost
+RA_DEVELOP_PORT  = 3001
+# You can add --render to $(RA_EXTRA_FLAGS) to turn on server side UI pre-rendering
+RA_EXTRA_FLAGS   = --debug --render
+RA_FLAGS         =  $(RA_EXTRA_FLAGS) --host $(RA_DEVELOP_HOST) --port $(RA_DEVELOP_PORT)
 RA_ENTRY         = ./ui/index.jsx
 RA_STYLES        = ./ui/index.css
 RA_ASSETS        = ./ui/assets
